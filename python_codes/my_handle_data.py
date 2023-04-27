@@ -214,13 +214,13 @@ def order_and_err(real_field, real_pos) -> "tuple[np.ndarray, np.ndarray, np.nda
     # to case basis. Systematic error commented out as it influences all measurements the same way
 
     field_err[0, :] = np.sqrt(np.square(np.abs(x_gradient) * 0.2) +
-                              np.square(ordered_field[0, :] * 0.001) / 12 +
-                              np.square(np.ones(np.shape(x_gradient)[0]) * 0.00005) / 12)
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0006) / 12 +
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0001) / 12)
     field_err[1, :] = np.sqrt(np.square(np.abs(y_gradient) * 0.2) +
-                              np.square(ordered_field[1, :] * 0.001) / 12 +
-                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.00005) / 12)
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0006) / 12 +
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0001) / 12)
     field_err[2, :] = np.sqrt(np.square(np.abs(z_gradient) * 0.2) +
-                              np.square(ordered_field[2, :] * 0.001) / 12 +
-                              np.square(np.ones(np.shape(z_gradient)[0]) * 0.00005) / 12)
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0006) / 12 +
+                              np.square(np.ones(np.shape(y_gradient)[0]) * 0.0001) / 12)
 
     return ordered_field, ordered_pos, field_err
